@@ -1,0 +1,267 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --main-color: #1a2035;
+    --main-color-lighter: #202940;
+    --purple: #8b369f;
+    --red: #d52f2b;
+    --orange: #fd8d04;
+    --green: #47a257;
+    --lightblue: #1dadbf;
+    --main-white: #8b92a9;
+}
+
+/*Prevent animated collapse from Bootstrap - it looks awful*/
+
+.collapsing {
+    -webkit-transition: none;
+    transition: none;
+    display: none;
+}
+
+body {
+    background-color: var(--main-color);
+    padding: 5vh;
+}
+
+main {
+    display: flex;
+}
+
+.card-title, .card-subtitle, hr {
+    color: var(--main-white);
+    border-color: whitesmoke;
+    width: 90%;
+}
+
+.parking {
+    border-radius: 3px;
+    background-color: var(--main-color-lighter);
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    height: auto;
+    margin: 1vh;
+}
+
+.parking-row--horizontal {
+    display: flex;
+    flex-flow: row;
+}
+
+.parking-row--vertical {
+    display: flex;
+    flex-flow: column;
+}
+
+#parking1, #parking2, #parking3 {
+    width: auto;
+    min-width: 20vw;
+    padding-left: 10%;
+    padding-bottom: 5%;
+}
+
+.card-body {
+    margin: 0 auto;
+}
+
+.parking1 {
+    justify-content: space-between;
+    width: 30%;
+}
+
+.parking2 {
+    width: 45%;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+.parking3 {
+    flex-flow: row;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.stack-aside {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.stack-on-top {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    height: 50vh;
+}
+
+.drag {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    margin: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: var(--main-white);
+    cursor: move
+}
+
+.parking-place {
+    position: relative;
+    align-self: flex-start;
+    width: 6vw;
+    height: 5vh;
+    border: 1px solid var(--main-white);
+    margin: 1vh;
+}
+
+.containerNumber {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: var(--main-white);
+}
+
+.containerNumberInOccupied {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    color: var(--main-color);
+}
+
+.parking-place--vertical {
+    width: 6vh;
+    height: 5vw;
+}
+
+.empty {
+    border: 1px solid var(--main-white);
+    background-repeat: repeat;
+}
+
+@keyframes blink {
+    50% {
+        border-color: #fff;
+    }
+}
+
+.empty-highlight {
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: step-end;
+    animation-iteration-count: infinite;
+}
+
+.modal-content {
+    font-size: 1.5em;
+    color: var(--main-white);
+}
+
+.mobile-button {
+    border-radius: 3px;
+}
+
+.modal-header, .modal-footer {
+    background-color: var(--main-color-lighter);
+    border-radius: 0%;
+    border-color: var(--main-white);
+}
+
+.modal-body {
+    background-color: var(--main-color)
+}
+
+/*Media queries*/
+
+@media screen and (max-width: 1024px) {
+    body {
+        padding: 0;
+    }
+    main {
+        flex-flow: column;
+        padding-top: 5%;
+    }
+    main .parking {
+        min-width: 85vw;
+        margin: 0 auto;
+    }
+    section.card {
+        margin-bottom: 4%;
+    }
+    section.parking3 {
+        margin-bottom: 12%;
+    }
+    #parking1 h5, #parking2 h5, #parking3 h5 {
+        font-size: 1.4rem;
+    }
+    #parking1 h6, #parking2 h6, #parking3 h6 {
+        font-size: 1rem;
+    }
+    /* #parking1, #parking2, #parking3 {
+        width: 50vw;
+    } */
+    .parking {
+        margin: 50px 0;
+        border: 1px solid grey;
+    }
+    .parking .p2 {
+        padding-left: .7rem;
+    }
+    .parking-place {
+        width: 12vw;
+        height: 6vh;
+    }
+    .parking-place--vertical {
+        width: 5.3vh;
+        height: 12vw;
+    }
+    .modal-content {
+        font-size: 1.5rem;
+    }
+    .mobile-button {
+        font-size: 1em;
+        margin: 0 auto;
+        width: 70%;
+    }
+    .bottom-info {
+        color: white;
+        background-color: var(--main-color-lighter);
+    }
+    .bottom-bar {
+        display: block;
+        background-color: var(--main-color);
+        color: white;
+        position: fixed;
+        bottom: -9%;
+        width: 100%;
+        height: 9%;
+        text-align: center;
+        font-size: 1.5em;
+        border-top: 1px solid var(--main-white);
+    }
+
+    .bottom-bar p {
+        display: inline-block;
+        margin-top: 2%;
+    }
+    .bottom-bar-show {
+        bottom: 0;
+    }
+
+    .bottom-parking {
+        font-size: 5vw;
+        border: 1px solid grey;
+        border-radius: 3px;
+        padding: 0 2%;
+    }
+}

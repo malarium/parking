@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parking - research</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+    <main>
+        <section class="parking parking1 card">
+            <div class="card-body p1">
+                <div id="parking1" class="p1 close-p">
+                    <h5 class="card-title p1 text-center">Parking A</h5>
+                    <h6 class="card-subtitle p1 text-center">5th Ave, 23-769-12 WN</h6>
+                </div>
+                <div class="collapse show parkCollapse1" id="parkCollapse1" data-park="Parking A">
+                    <div class="parking-row--horizontal">
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place occupied">
+                            <div draggable="true" id="d2" class="drag draggable" data-toggle="modal" data-target="#modalInfo"
+                                data-info="weight: 746kg, cargo: seed"></div>
+                        </div>
+                        <div class="parking-place occupied">
+                            <div draggable="true" id="d3" class="drag draggable" data-toggle="modal" data-target="#modalInfo"
+                                data-info="weight: 909kg, cargo: slag"></div>
+                        </div>
+                        <!-- <div class="parking-place empty" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
+                    </div>
+                    <div class="parking-row--vertical">
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="parking parking2 card">
+            <div class="card-body p2">
+                <div id="parking2" class="p2 close-p">
+                    <h5 class="card-title p2 text-center">Parking B</h5>
+                    <h6 class="card-subtitle p2 text-center">15th Ave, 23-769-0</h6>
+                </div>
+                <div class="stack-on-top collapse show parkCollapse2" id="parkCollapse2" data-park="Parking B">
+                    <div class="parking-row--horizontal">
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place occupied">
+                            <div draggable="true" id="d1" class="drag" data-toggle="modal" data-target="#modalInfo"
+                                data-info="weight: 1430kg, cargo: wheat"></div>
+                        </div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                    </div>
+                    <div class="parking-row--horizontal">
+                        <div class="parking-place empty parking-place--vertical"></div>
+                        <div class="parking-place empty parking-place--vertical"></div>
+                        <div class="parking-place occupied parking-place--vertical">
+                            <div draggable="true" id="d5" class="drag" data-toggle="modal" data-target="#modalInfo"
+                                data-info="weight: 835kg, cargo: water"></div>
+                        </div>
+                        <div class="parking-place empty parking-place--vertical"></div>
+                        <div class="parking-place empty parking-place--vertical"></div>
+                        <div class="parking-place empty parking-place--vertical"></div>
+                        <!-- <div class="parking-place empty parking-place--vertical"></div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="parking parking3 card">
+            <div class="card-body p3">
+                <div id="parking3" class="p3 close-p">
+                    <h5 class="card-title p3 text-center">Parking C</h5>
+                    <h6 class="card-subtitle p3 text-center">5th Ave, 23-769-12 WN</h6>
+                </div>
+                <div class="stack-aside collapse show parkCollapse3" id="parkCollapse3" data-park="Parking C">
+                    <div class="parking-row--vertical">
+                        <div class="parking-place occupied">
+                            <div draggable="true" id="d4" class="drag" data-toggle="modal" data-target="#modalInfo"
+                                data-info="weight: 991kg, cargo: milk"></div>
+                        </div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                    </div>
+                    <div class="parking-row--vertical">
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                        <div class="parking-place empty"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="bottom-bar bottom-info">
+        <p class="bottom-info bottom-parking bp1">Parking 1</p>
+        <p class="bottom-info bottom-parking bp2">Parking 2</p>
+    </div>
+    <!-- <button onclick="test()">Test button</button> -->
+    <!--Modal-->
+    <div class="modal fade" id="modalInfo" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-lg mobile-button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
